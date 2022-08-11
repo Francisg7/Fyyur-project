@@ -1,0 +1,7 @@
+#
+venv/
+*.log
+node_modules/
+.idea/
+.gitignores
+.gitatributes
