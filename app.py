@@ -7,7 +7,7 @@ import sys
 
 import dateutil.parser
 import babel
-from flask import Flask, render_template, request, Response, flash, redirect, url_for, abort, jsonify
+from flask import Flask, render_template, request, flash, redirect, url_for, abort
 from flask_migrate import Migrate
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
@@ -17,7 +17,6 @@ from flask_wtf import Form
 from sqlalchemy import func
 
 from forms import *
-from models import *
 
 # ----------------------------------------------------------------------------#
 # App Config.
@@ -34,7 +33,7 @@ migrate = Migrate(app, db)
 
 
 # TODO: connect to a local postgresql database
-
+from models import *
 # ----------------------------------------------------------------------------#
 # Models. Venue, Artist, Show
 # ----------------------------------------------------------------------------#
