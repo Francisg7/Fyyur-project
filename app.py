@@ -17,18 +17,19 @@ from flask_wtf import Form
 from sqlalchemy import func
 
 from forms import *
+from models import *
 
 # ----------------------------------------------------------------------------#
 # App Config.
 # ----------------------------------------------------------------------------#
-from models import *
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 moment = Moment(app)
 app.config.from_object('config')
-db = SQLAlchemy(app)
-db = SQLAlchemy(app, session_options={"expire_on_commit": False})
+db = SQLAlchemy(session_options={"expire_on_commit": False})
+db.init_app(app)
 migrate = Migrate(app, db)
 
 

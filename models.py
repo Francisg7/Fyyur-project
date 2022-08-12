@@ -1,7 +1,6 @@
 from datetime import datetime
-
-
 from app import db
+
 
 class Venue(db.Model):
     __tablename__ = 'Venue'
@@ -43,6 +42,7 @@ class Venue(db.Model):
         return len(self.past_shows)
 
     # TODO: implement any missing fields, as a database migration using Flask-Migrate
+
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
