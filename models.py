@@ -1,7 +1,7 @@
-from wtforms.fields import datetime
+from datetime import datetime
+
 
 from app import db
-
 
 class Venue(db.Model):
     __tablename__ = 'Venue'
