@@ -473,12 +473,12 @@ def create_show_submission():
     # called to create new shows in the db, upon submitting new show listing form
     # TODO: insert form data as a new Show record in the db, instead
     error = False
-
+    form = ShowForm()
     try:
-        if request.method == "POST":
-            artist_id = request.method['artist_id']
-            venue_id = request.method['venue_id']
-            start_time = request.method['start_time']
+        if form.validate_on_submit():
+            artist_id = form.artist_id.data
+            venue_id = form.venue_id.data
+            start_time = form.start_time.data
 
             shows = Show(artist_id=artist_id, venue_id=venue_id, start_time=start_time)
 
